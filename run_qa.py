@@ -45,11 +45,14 @@ def generate_answer(question: str) -> str:
     return answer
 
 def main():
-    question = "Tell me a random joke "
-    a = generate_answer("Opisz sieć energetyczną i podaj schemat połączeń dla sieci typu TN-S wraz ze sposobem zabezpieczeń przeciwporażeniowych")
-    ...
-    # demo = gr.Interface(fn=generate_answer, inputs="text", outputs="text")
-    # demo.launch()
+    while True:
+        question = input("Enter your question. If you want to exit, type 'exit': ")
+        if question == "exit":
+            break
+
+        answer = generate_answer(question)
+        print(answer)
+
 
 
 if __name__ == "__main__":
